@@ -1,0 +1,138 @@
+import java.util.ArrayList;
+
+public class PQHeap implements IPQ {
+    //Field
+    private int MaxElms;
+    private ArrayList<Element> PrioArray;
+
+    // Constructor
+    public PQHeap(int MaxElms)
+    {
+        this.MaxElms = MaxElms;
+        this.PrioArray = new ArrayList<Element>(MaxElms);
+    }
+
+    private int Parent(int i){
+        return i/2;
+    }
+
+
+    private int Heap-minimum(a){
+        return a[0];
+    }
+
+
+    public void max-heap-insert(Element key){
+        MaxElms++;
+        int i = MaxElms;
+        PrioArray.add(key);
+        while( i > 1 && PrioArray.get(Parent(i))  >  PrioArray.get(i)){
+            int tmp = PrioArray.get(i);
+            PrioArray.set(i) = PrioArray.get(Parent(i));
+            PrioArray.set(Parent(i)) = tmp;
+            // Den skal blive ved med at tjekke, fordi den nye forældre kan også være "svagere".
+            i = Parent(i);
+        }
+
+    }
+
+
+    public void insert(Element e)
+    {
+        boolean check = true;
+        int n = 0;
+        while(check == true)
+        {
+
+            if(this.PrioArray[n] == null){
+                this.PrioArray[n] = e;
+                check = false;
+            }
+
+            else{
+                n++;
+            }
+
+        }
+    }
+
+
+
+    /*
+     * pseudo code for extraxt max
+     *
+     * HEAP-EXTRACT-MAX(A)
+     * 1 if A.HEAP-size <1
+     * 2	error"heap underflow"
+     * 3 max = a[1]
+     * 4 a[1] = a[a.heap-size]
+     * 5 a.heap-size = a.heap-size -1
+     * 6 Max-Heapify(A,1)
+     * 7 return max
+     */
+
+    @Override
+    public Element extractMin() {
+        if(this.maxElms < 1)
+        {
+            System.err.prntln("Heap Underflow");
+        }
+        min =
+        return null;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Override
+    public void insert(Element e) {
+
+    }
+  /*
+   Min-Heapify(A,i)
+      1. l = Left(i)
+      2. r = Rigth(i)
+      3. if l =< A.heap-size && A[l] > A[i]
+      4.    largest = l
+      5. else largest = i
+      6. if r =< A.heap-size 66 A[r] > A[largest]
+      7.    lragest = r
+      8. if lragest != i
+      9.    exchange A[i] with A[largest]
+      10.   Min-Heapify(A,largest)
+      */
+
+    // Taget fra bogen, der er også en version i projektet.
+
+
+
+}
